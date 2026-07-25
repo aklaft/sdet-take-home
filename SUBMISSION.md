@@ -7,12 +7,13 @@
 
 | Part | Time spent |
 |---|---|
-| Part 1 — Stabilize | ~ min |
+| Part 1 — Stabilize | ~60 min |
 | Part 2a — Helper | ~ min |
 | Part 2b — Design write-up | ~ min |
 | **Total** | ~ min |
 
 (If you went over 90 minutes, that's fine — just tell us where the time went.)
+Part 1 went over a little with some initial environment setup, and I went down a false path on the first one until I noticed that it was actually the app that was wrong. 
 
 ## Part 2a — which helper did you build, and why?
 

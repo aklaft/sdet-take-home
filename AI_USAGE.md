@@ -5,13 +5,16 @@ here. Being honest about *how* you used it tells us more than pretending you
 didn't. There is no penalty for heavy use and no bonus for avoiding it — we're
 interested in your judgment.
 
-**Did you use AI tools on this exercise?** (yes / no)
+**Did you use AI tools on this exercise?** yes
 
 If yes, briefly:
 
 - **Which tools?** (Copilot, Claude, ChatGPT, Cursor, etc.)
+claude
 - **Where did they help most?** (e.g. boilerplate, debugging the flaky test,
   drafting the CI YAML)
+  used intially to help understand the codebase, but it is simple
+  didn't really use in part 1
 - **What did you accept vs. reject or rewrite?** (Did the AI suggest anything you
   decided was wrong or didn't fit? How did you catch it?)
 - **Anything you verified by hand** because you didn't fully trust the output?

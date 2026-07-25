@@ -37,7 +37,7 @@ describe("Portfolio Dashboard", () => {
     // request fired during page load is never stubbed — the UI shows the real
     // seeded data instead of the mock, and this assertion fails. Register the
     // intercept BEFORE visiting.
-    cy.visit("/");
+    
     cy.intercept("GET", "/api/portfolios", {
       statusCode: 200,
       body: [
@@ -51,6 +51,8 @@ describe("Portfolio Dashboard", () => {
         },
       ],
     }).as("list");
+
+    cy.visit("/");
 
     cy.contains('[data-cy="portfolio-name"]', "Mocked Fund");
     cy.get('[data-cy="portfolio"]').should("have.length", 1);
@@ -69,12 +71,7 @@ describe("Portfolio Dashboard", () => {
     cy.get('[data-cy="cash-input"]').clear().type("15000");
     cy.get('[data-cy="create-submit"]').click();
 
-    let statusText: string | undefined;
-    cy.get('[data-cy="status"]').then(($el) => {
-      statusText = $el.text();
-    });
 
-    // Runs synchronously, before the .then above — statusText is undefined.
-    expect(statusText).to.eq("Saved");
+    cy.get('[data-cy="status"]').should('have.text', 'Saved')
   });
 });
