@@ -5,4 +5,6 @@
 // The API exposes POST /api/admin/reset for exactly this purpose. Part of the
 // exercise is deciding where/whether to call it.
 
+import "./commands";
+
 export {};

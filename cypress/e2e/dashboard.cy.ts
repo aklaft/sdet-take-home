@@ -58,7 +58,7 @@ describe("Portfolio Dashboard", () => {
     cy.get('[data-cy="portfolio"]').should("have.length", 1);
   });
 
-  it("creates a portfolio and confirms the saved status", () => {
+  it("creates a portfolio and confirms the saved status via api", () => {
     // The create POST resolves after a short delay; the UI shows "Saving…" then
     // "Saved". BUG: this reads the status text into a variable inside a .then()
     // (async) but asserts on it synchronously (outside the command chain), so
@@ -70,8 +70,17 @@ describe("Portfolio Dashboard", () => {
     cy.get('[data-cy="name-input"]').type("Tactical Fund C");
     cy.get('[data-cy="cash-input"]').clear().type("15000");
     cy.get('[data-cy="create-submit"]').click();
-
+    //cy.createPortfolio("TFC", 15000);
 
     cy.get('[data-cy="status"]').should('have.text', 'Saved')
+  });
+
+  it("creates a portfolio and confirms the saved status", () => {
+  //creates a portfolio via api and then ensures it exists on the ui    
+
+    cy.createPortfolio("TFC", 15000);
+    cy.visit("/");
+
+    cy.contains('[data-cy="portfolio-name"]', "TFC");
   });
 });

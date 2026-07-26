@@ -15,6 +15,10 @@ claude
   drafting the CI YAML)
   used intially to help understand the codebase, but it is simple
   didn't really use in part 1
-- **What did you accept vs. reject or rewrite?** (Did the AI suggest anything you
-  decided was wrong or didn't fit? How did you catch it?)
-- **Anything you verified by hand** because you didn't fully trust the output?
+
+  in part 2 used it create the skeleton of the new command
+- **What did you accept vs. reject or rewrite?** 
+it wanted to accept the parameters of the helper in a new CreatePortfolioOptions object. I thought that was overly complex and removed it. It did have the good idea of making the money value optional so I went with taht
+- **Anything you verified by hand** I ran the test, and added a new one to demonstrate. The post syntax was too good to be true so I checked that, but it really was that easy, thanks cypress
+
+also used it a bit on my sample yaml. it really didn't want to use the wait-on syntax so I of reminded it that it exists

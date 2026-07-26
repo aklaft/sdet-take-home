@@ -8,22 +8,21 @@
 | Part | Time spent |
 |---|---|
 | Part 1 — Stabilize | ~60 min |
-| Part 2a — Helper | ~ min |
-| Part 2b — Design write-up | ~ min |
-| **Total** | ~ min |
+| Part 2a — Helper | ~20 min |
+| Part 2b — Design write-up | ~ 20 min |
+| **Total** | ~100 min |
 
 (If you went over 90 minutes, that's fine — just tell us where the time went.)
 Part 1 went over a little with some initial environment setup, and I went down a false path on the first one until I noticed that it was actually the app that was wrong. 
 
 ## Part 2a — which helper did you build, and why?
 
-(Option A test-data builder, or Option B retry-with-backoff — and your reasoning.)
+I built cy.createPortfolio. This uses the api to create a portfolio with a certain name and value. I chose this because I assume the full suite of tests would need to create a large number of portfolios in different states. It is still useful to test the UI as well, but once the UI is tested it it faster to use the api to setup before we even open the ui. This could even be extended to create various stocks within the portfolio to aid in scenario creation
 
 ## How to run your submission
 
-(Any changes to the setup/run steps? If `npm test` works as-is, just say so.)
+npm test is fine
 
 ## Notes for the reviewer
 
-(Anything you'd want a teammate to know in a PR description: tradeoffs, things
-you'd do with more time, assumptions you made.)
+this isn't the first api call in the suite, but if authentication was added etc, it might need to be updated. 
